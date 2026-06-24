@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="description" content="یک بازی ساده و جذاب برای کلیک روی سکه و ثبت رکورد" />
+  <title>بازی کلیک روی سکه</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-box">
+    <h1>بازی کلیک روی سکه</h1>
+    <p class="subtitle">در ۳۰ ثانیه تا می‌توانی سکه جمع کن!</p>
+
+    <section class="score-board">
+      <div class="info">امتیاز: <span id="score">0</span></div>
+      <div class="info">زمان: <span id="time">30</span> ثانیه</div>
+      <div class="info">رکورد: <span id="record">0</span></div>
+    </section>
+
+    <button class="coin" id="coin" aria-label="سکه را کلیک کن">
+      <img src="icons/coin.png" alt="سکه" />
+    </button>
+
+    <button class="start-btn" id="startBtn">شروع بازی</button>
+    <p class="message" id="message">برای شروع روی دکمه سبز بزن.</p>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("service-worker.js");
+      });
+    }
+  </script>
+</body>
+</html>
